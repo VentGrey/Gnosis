@@ -1,0 +1,35 @@
+{
+    "page": 1,
+    "perPage": 10,
+    "totalItems": 3,
+    "totalPages": 1,
+    "items": [
+        {
+            "@collectionId": "abc123",
+            "@collectionName": "bands",
+            "name": "Ephemeral Sun",
+            "genre": "Progressive Rock",
+            "origin": "USA",
+            "formed": 2004,
+            "albums": 5
+        },
+        {
+            "@collectionId": "def456",
+            "@collectionName": "bands",
+            "name": "Celestial Wanderer",
+            "genre": "Post-Rock",
+            "origin": "Canada",
+            "formed": 2010,
+            "albums": 3
+        },
+        {
+            "@collectionId": "ghi789",
+            "@collectionName": "bands",
+            "name": "Lunar Tides",
+            "genre": "Ambient",
+            "origin": "UK",
+            "formed": 2000,
+            "albums": 7
+        }
+    ]
+}

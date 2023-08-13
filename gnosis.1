@@ -1,0 +1,57 @@
+.TH GNOSIS 1 "August 2023" "Version 1.0.0" "Gnosis Manual - VentGrey"
+.SH NAME
+gnosis \- generate TypeScript definition files from PocketBase JSON output
+.SH SYNOPSIS
+.B gnosis
+.RB [ \-i
+.RB < input.json > ]
+.RB [ \-o
+.RB < output.d.ts > ]
+.SH DESCRIPTION
+.PP
+.B gnosis
+is a CLI tool designed to generate TypeScript definition files from PocketBase JSON outputs. PocketBase JSON outputs typically contain a list of items, each with a special field @collectionName that specifies the type of the item. Gnosis uses this field to determine the name of the TypeScript interface it generates.
+.SH OPTIONS
+.TP
+.B \-i, \-\-input
+Specify the input JSON file.
+.TP
+.B \-o, \-\-output
+Specify the output .d.ts file. If not specified, the result will be printed to stdout.
+.SH EXAMPLES
+.PP
+Imagine you have a PocketBase JSON output from a collection named "bands", which looks like:
+.PP
+.nf
+{
+    "page": 1,
+    "items": [
+        {
+            "@collectionName": "bands",
+            "name": "Opeth",
+            "genre": "Progressive Metal",
+            ...
+        },
+        ...
+    ]
+}
+.fi
+.PP
+Running:
+.PP
+.nf
+.BR $ " gnosis -i pocketbase.json"
+.fi
+.PP
+Will print:
+.PP
+.nf
+interface Bands {
+    name: string;
+    genre: string;
+    ...
+}
+.fi
+.SH AUTHOR
+.PP
+Written by VentGrey.
